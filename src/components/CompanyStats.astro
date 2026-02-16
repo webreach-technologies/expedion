@@ -6,47 +6,48 @@ import Stats3 from "../assets/companystats/cstats-3.jpg";
 ---
 
 <section id="statsSection" class="pt-8 sm:pt-13 lg:pt-14 pb-10 sm:pb-13 lg:pb-14">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-2 mb-8 md:mb-10 reveal">
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:gap-2 mb-8 md:mb-10 reveal relative">
+        <Image src={Stats3} alt="Years of Experience" class="absolute inset-0 w-full h-full lg:hidden" />
 
         <!-- Box 1 -->
-        <div class="relative h-75 md:h-80 lg:h-120 overflow-hidden">
-          <Image src={Stats1} alt="Years of Experience" class="absolute inset-0 w-full h-full " />
+        <div class="relative h-35 md:h-80 lg:h-120 overflow-hidden">
+          <Image src={Stats1} alt="Years of Experience" class="absolute inset-0 w-full h-full hidden lg:inline-block" />
 
           <div class="absolute inset-0 bg-black/50"></div>
 
           <div class="relative z-10 flex items-center md:items-end h-full p-8">
             <div>
-              <h2 class="text-white text-6xl lg:text-7xl font-semibold counter" data-target="20">0+</h2>
+              <h2 class="text-white text-5xl lg:text-7xl font-semibold counter" data-target="20">0+</h2>
               <p class="text-white text-base lg:text-lg mt-2">Years of Experience</p>
             </div>
           </div>
         </div>
 
         <!-- Box 2 -->
-        <div class="relative h-75 md:h-80 lg:h-120 overflow-hidden">
-          <Image src={Stats2} alt="Countries Covered" class="absolute inset-0 w-full h-full " />
+        <div class="relative h-35 md:h-80 lg:h-120 overflow-hidden">
+          <Image src={Stats2} alt="Countries Covered" class="absolute inset-0 w-full h-full hidden lg:inline-block" />
 
           <div class="absolute inset-0 bg-black/50"></div>
 
-          <div class="relative z-10 flex items-center justify-start md:justify-center h-full p-8 md:p-0">
+          <div class="relative z-10 flex items-center justify-center h-full p-8 md:p-0">
             <div class="md:text-center">
-              <h2 class="text-white text-6xl lg:text-7xl font-semibold counter" data-target="160">0+</h2>
+              <h2 class="text-white text-5xl lg:text-7xl font-semibold counter" data-target="160">0+</h2>
               <p class="text-white text-base lg:text-lg mt-2">Countries Covered</p>
             </div>
           </div>
         </div>
 
         <!-- Box 3 -->
-        <div class="relative h-75 md:h-80 lg:h-120 overflow-hidden">
-          <Image src={Stats3} alt="Delivered Packages" class="absolute inset-0 w-full h-full " />
+        <div class="relative h-35 md:h-80 lg:h-120 overflow-hidden">
+          <Image src={Stats3} alt="Delivered Packages" class="absolute inset-0 w-full h-full hidden lg:inline-block" />
 
           <div class="absolute inset-0 bg-black/50"></div>
 
-          <div class="relative z-10 flex items-center md:items-start justify-start md:justify-end h-full p-8">
+          <div class="relative z-10 flex items-center md:items-start justify-end h-full p-8">
             <div class="md:text-right">
-              <h2 class="text-white text-6xl lg:text-7xl font-semibold counter" data-target="20000" data-suffix="K+">0</h2>
+              <h2 class="text-white text-5xl lg:text-7xl font-semibold counter" data-target="20000" data-suffix="K+">0</h2>
               <p class="text-white text-base lg:text-lg mt-2">Delivered Packages</p>
             </div>
           </div>
@@ -57,7 +58,7 @@ import Stats3 from "../assets/companystats/cstats-3.jpg";
       <div class="grid grid-cols-1 md:grid-cols-3 border border-gray-200 divide-y md:divide-y-0 md:divide-x divide-gray-200 bg-white reveal">
       
         <!-- Card 1 -->
-        <div class="p-10 md:p-6 lg:p-10 text-left">
+        <div class="p-5 md:p-6 lg:p-10 text-left">
           <div class="mb-3 text-[#7EA2FF]">
             <!-- Shield Icon -->
             <svg xmlns="http://www.w3.org/2000/svg" 
@@ -82,7 +83,7 @@ import Stats3 from "../assets/companystats/cstats-3.jpg";
         </div>
 
         <!-- Card 2 -->
-        <div class="p-10 md:p-6 lg:p-10 text-left">
+        <div class="p-5 md:p-6 lg:p-10 text-left">
           <div class="mb-3 text-[#7EA2FF]">
             <!-- Cube Icon -->
             <svg xmlns="http://www.w3.org/2000/svg" 
@@ -107,7 +108,7 @@ import Stats3 from "../assets/companystats/cstats-3.jpg";
         </div>
 
         <!-- Card 3 -->
-        <div class="p-10 md:p-6 lg:p-10 text-left">
+        <div class="p-5 md:p-6 lg:p-10 text-left">
           <div class="mb-3 text-[#7EA2FF]">
             <!-- Globe Icon -->
             <svg xmlns="http://www.w3.org/2000/svg" 
