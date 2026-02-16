@@ -1,0 +1,51 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BannerSlider from '../components/BannerSlider.astro'
+import RotatingGlobe from "../components/RotatingGlobe.astro";
+import CompanyStats from "../components/CompanyStats.astro";
+import ServicesInteractive from "../components/ServicesInteractive.astro";
+import WhyCus from "../components/WhyCus.astro";
+import ReadytoMove from "../components/ReadytoMove.astro";
+import LatestArticle from "../components/LatestArticle.astro";
+import FAQs from "../components/FAQs.astro";
+import QuoteForm from "../components/QuoteForm.astro";
+import Careers from "../components/Careers.astro";
+---
+
+<Layout title="Home" description="Welcome to my site">
+
+	<BannerSlider />
+
+    <section class="pt-10 sm:pt-13 lg:pt-14 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <h2 class="font-bold text-primary uppercase border-l-2 border-primary pl-4">About Us</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-[30%_65%] xl:grid-cols-[30%_60%] justify-between items-center reveal">
+                <div>
+                    <RotatingGlobe />
+                </div>
+                <div>
+                    <p class="text-sm mb-2 leading-5.5 md:leading-6">Expedition strives to deliver international logistics solutions tailor made to its customers requirements. Our dedicated and experienced team works diligently towards making every shipment a success with utmost earnesty based on set standard SOPs and thereby adding value to our customers existing Supply Chain.</p>
+                    <h3 class="text-2xl md:text-3xl lg:text-4xl font-semibold text-blue-900 mb-2 leading-tight">Earnest - Efficient - Effective</h3>
+                    <p class="text-sm mb-2 leading-5.5 md:leading-6">Helming the affairs at Expedion, are our two promoters: Mr Sanjay Malkani with over 25 years of experience in the Media Industry and Mr Kumar Ankesh with over 18 years of experience in the International Logistics Domain. Having worked with reputed organizations within their Industries, they bring with themselves a very enriching and synergized insight to the general and niche service offerings.</p>
+                    <p class="text-sm leading-5.5 md:leading-6">Principled on values and ethics, we are your go to partners for all International Logistics requirements. We believe in fostering lifetime bonds with our clients, starting with merit and supplementing it with consistent performances.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <CompanyStats />
+
+    <ServicesInteractive />
+
+    <WhyCus />
+
+    <ReadytoMove />
+
+    <LatestArticle />
+
+    <FAQs />
+
+    <QuoteForm />
+
+    <Careers />
+</Layout>

@@ -1,0 +1,24 @@
+---
+import { getImage } from "astro:assets";
+import Background from "../assets/cta/bg.jpg"
+import contentBg from "../assets/cta/contentBg.png"
+
+const optimizedBackground = await getImage({src: Background, format: 'avif'})
+const optimizedcontentBg = await getImage({src: contentBg, format: 'avif'})
+---
+
+
+<section class="py-10 sm:py-13 lg:py-14 bg-white relative" style={`background-image: url(${optimizedBackground.src}); background-size: cover; background-repeat: no-repeat; background-position: center; background-attachment: fixed;`}>
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center items-center reveal">
+        <div class="w-full md:w-2xl lg:w-3xl py-22 mb-6 md:mb-8" style={`background-image: url(${optimizedcontentBg.src}); background-size: 100% 100%; background-repeat: no-repeat; background-position: center;`}>
+            <h2 class="text-3xl md:text-3xl lg:text-6xl font-semibold text-white leading-tight text-center">Ready to move <br> smarter and faster?</h2>
+        </div>
+        <div class="w-full md:w-lg text-center">
+            <h3 class="text-base lg:text-2xl font-semibold text-black leading-tight mb-6">Talk to our experts and get a tailored logistics solution.</h3>
+            <a href="#" class="bg-primary text-white text-sm md:text-base px-4 md:px-8 py-3 rounded-full font-medium hover:bg-secondary transition-colors duration-300 ease-in-out">
+                Request A Quote
+            </a>
+        </div>
+    </div>
+</section>

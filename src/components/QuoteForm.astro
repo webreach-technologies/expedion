@@ -1,0 +1,109 @@
+---
+import { Image } from 'astro:assets';
+import Port from "../assets/quoteform/port.jpg";
+---
+
+<section class="pt-20 sm:pt-32 lg:pt-28 pb-10 sm:pb-13 lg:pb-14 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid grid-cols-1 lg:grid-cols-[40%_55%] xl:grid-cols-[35%_60%] gap-6 lg:gap-0 justify-between reveal">
+
+                   <!-- LEFT IMAGE -->
+                    <div class="flex lg:justify-center">
+                        <Image src={Port} alt="Port" class="w-100 h-auto lg:w-full lg:h-full aspect-10/9 lg:aspect-auto"></Image>
+                    </div>
+
+                    <!-- RIGHT FORM -->
+                    <div>
+                    <!-- Title -->
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight mb-4 md:mb-8">
+                        <span class="text-blue-900">Request Quote</span>
+                        <span class="text-gray-400 font-semibold"> / Track & Race</span>
+                    </h2>
+
+                    <!-- FORM -->
+                    <form class="space-y-6 md:space-y-10">
+
+                    <!-- Personal Data -->
+                    <div>
+                    <h3 class="font-semibold mb-4">Personal Data</h3>
+
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <input type="text" placeholder="Your Name *"
+                        class="w-full text-sm border border-gray-400 px-3 py-2 bg-transparent focus:outline-none focus:border-blue-900 transition" />
+
+                        <input type="email" placeholder="Email Address *"
+                        class="w-full text-sm border border-gray-400 px-3 py-2 bg-transparent focus:outline-none focus:border-blue-900 transition" />
+
+                        <input type="text" placeholder="Phone Number *"
+                        class="w-full text-sm border border-gray-400 px-3 py-2 bg-transparent focus:outline-none focus:border-blue-900 transition" />
+                    </div>
+                    </div>
+
+                    <!-- Shipment Data -->
+                    <div>
+                    <h3 class="font-semibold mb-4">Shipment Data</h3>
+
+                    <div class="grid md:grid-cols-3 gap-4 mb-4">
+                        <input type="text" placeholder="Freight Type"
+                        class="w-full text-sm border border-gray-400 px-3 py-2 bg-transparent focus:outline-none focus:border-blue-900 transition" />
+
+                        <input type="text" placeholder="City of Departure"
+                        class="w-full text-sm border border-gray-400 px-3 py-2 bg-transparent focus:outline-none focus:border-blue-900 transition" />
+
+                        <input type="text" placeholder="Delivery City"
+                        class="w-full text-sm border border-gray-400 px-3 py-2 bg-transparent focus:outline-none focus:border-blue-900 transition" />
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-4 mb-6">
+                        <input type="text" placeholder="Incoterms"
+                        class="w-full text-sm border border-gray-400 px-3 py-2 bg-transparent focus:outline-none focus:border-blue-900 transition" />
+
+                        <input type="text" placeholder="Weight"
+                        class="w-full text-sm border border-gray-400 px-3 py-2 bg-transparent focus:outline-none focus:border-blue-900 transition" />
+
+                        <input type="text" placeholder="Height"
+                        class="w-full text-sm border border-gray-400 px-3 py-2 bg-transparent focus:outline-none focus:border-blue-900 transition" />
+                    </div>
+
+                    <!-- Checkboxes -->
+                    <div class="flex flex-wrap gap-6 text-sm text-gray-700">
+                        <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" class="w-4 h-4 border-gray-400 accent-blue-900">
+                        Fragile
+                        </label>
+
+                        <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" class="w-4 h-4 border-gray-400 accent-blue-900">
+                        Express Delivery
+                        </label>
+
+                        <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" class="w-4 h-4 border-gray-400 accent-blue-900">
+                        Insurance
+                        </label>
+
+                        <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" class="w-4 h-4 border-gray-400 accent-blue-900">
+                        Packaging
+                        </label>
+                    </div>
+                    </div>
+
+                    <!-- Button -->
+                    <div>
+                    <button 
+                        type="submit"
+                        class="bg-primary text-white text-sm md:text-base px-4 md:px-8 py-3 rounded-full font-medium hover:bg-secondary transition-colors duration-300 ease-in-out"
+                    >
+                        Request A Quote
+                    </button>
+                    </div>
+                    </form>
+
+                    </div>
+
+            </div>
+
+        </div>
+</section>
+

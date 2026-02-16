@@ -1,0 +1,250 @@
+---
+import { Image } from 'astro:assets';
+import Slide1 from "../assets/banners/HeroSlide-1.jpg";
+import Slide2 from "../assets/banners/HeroSlide-2.jpg";
+import Slide3 from "../assets/banners/HeroSlide-3.jpg";
+import Slide4 from "../assets/banners/HeroSlide-4.jpg";
+---
+
+
+<!-- Slider Container -->
+    <section class="relative w-full h-175 overflow-hidden group" id="slider-container">
+        
+        <!-- Slides Wrapper: Images are now directly in HTML -->
+        <div id="slides-wrapper" class="relative w-full h-full">
+            
+            <!-- Slide 1 -->
+            <div class="slide active absolute inset-0 slide-transition opacity-100" 
+                 data-heading="Seamless Transport Across Every Mile, Wave, and Flight" 
+                 data-subheading="Experience elegance through simplicity and modern aesthetics."
+                 data-button="Get Started">
+                <div class="absolute inset-0 bg-black/40 z-10"></div>
+                <Image src={Slide1} alt="Design" width={1920} height={900} quality={60} loading="eager" class="w-full h-full object-cover md:object-fill">
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide absolute inset-0 slide-transition opacity-0" 
+                 data-heading="Seamless Transport Across Every Mile, Wave, and Flight" 
+                 data-subheading="Experience elegance through simplicity and modern aesthetics."
+                 data-button="View Gallery">
+                <div class="absolute inset-0 bg-black/40 z-10"></div>
+                <Image src={Slide2} alt="Design" width={1920} height={900} quality={60} loading="eager" class="w-full h-full object-cover md:object-fill">
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide absolute inset-0 slide-transition opacity-0" 
+                 data-heading="Seamless Transport Across Every Mile, Wave, and Flight" 
+                 data-subheading="Experience elegance through simplicity and modern aesthetics."
+                 data-button="Learn More">
+                <div class="absolute inset-0 bg-black/40 z-10"></div>
+                <Image src={Slide3} alt="Design" width={1920} height={900} quality={60} loading="eager" class="w-full h-full object-cover md:object-fill">
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="slide absolute inset-0 slide-transition opacity-0" 
+                 data-heading="Seamless Transport Across Every Mile, Wave, and Flight" 
+                 data-subheading="Experience elegance through simplicity and modern aesthetics."
+                 data-button="Learn More">
+                <div class="absolute inset-0 bg-black/40 z-10"></div>
+                <Image src={Slide4} alt="Design" width={1920} height={900} quality={60} loading="eager" class="w-full h-full object-cover md:object-fill">
+            </div>
+
+        </div>
+
+        <!-- Left Side Content (Overlay) -->
+        <div class="absolute inset-0 pointer-events-none z-20 flex items-center px-6 md:px-25 lg:px-36 2xl:px-60">
+            <div id="slide-content" class="max-w-3xl pointer-events-auto">
+                <h1 id="heading" class="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-4 opacity-0"></h1>
+                <p id="subheading" class="text-base md:text-xl text-gray-200 mb-8 opacity-0"></p>
+                <div id="cta-container" class="opacity-0">
+                    <a id="cta-button" href="#" class="inline-block bg-primary text-white text-sm md:text-base px-4 md:px-8 py-3 rounded-full font-medium hover:bg-secondary transition-colors duration-300 ease-in-out">
+                        Request a Quote
+                    </a>
+                    <a id="cta-button" href="#" class="inline-block bg-white text-black text-sm md:text-base px-4 md:px-8 py-3 rounded-full font-medium hover:bg-gray-200 transition-colors duration-300 ease-in-out">
+                        Explore Services
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <button id="prev-btn" class="absolute left-4 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-white/10 text-white backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white/20">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+        </button>
+        <button id="next-btn" class="absolute right-4 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-white/10 text-white backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white/20">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+        </button>
+
+        <!-- Navigation Dots -->
+        <div id="dots-container" class="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex space-x-3"></div>
+
+        <!-- Progress Bar -->
+        <div class="absolute bottom-0 left-0 h-1 bg-white/30 z-40 transition-all duration-5000 linear" id="progress-bar" style="width: 0%;"></div>
+    </section>
+
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-content {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .slide-transition {
+            transition: opacity 1s ease-in-out;
+        }
+
+        /* Image Zoom Animation */
+        /* .slide img {
+            transition: transform 6s linear; 
+            transform: scale(1);
+        }
+
+        .slide.active img {
+            transform: scale(1.15); 
+        } */
+    </style>
+
+    <script>
+        let currentSlide = 0;
+        let slideInterval;
+        const intervalTime = 6000;
+        let isPaused = false;
+
+        const slides = document.querySelectorAll('.slide');
+        const dotsContainer = document.getElementById('dots-container');
+        const headingEl = document.getElementById('heading');
+        const subheadingEl = document.getElementById('subheading');
+        const ctaBtn = document.getElementById('cta-button');
+        const progressBar = document.getElementById('progress-bar');
+        const container = document.getElementById('slider-container');
+
+        function initSlider() {
+            // Generate dots based on number of slides in HTML
+            slides.forEach((_, index) => {
+                const dot = document.createElement('button');
+                dot.className = `dot h-2 w-2 rounded-full bg-white/40 transition-all duration-300 ${index === 0 ? 'active' : ''}`;
+                dot.onclick = () => goToSlide(index);
+                dotsContainer.appendChild(dot);
+            });
+
+            updateContent();
+            startAutoSlide();
+        }
+
+        function updateContent() {
+            const activeSlide = slides[currentSlide];
+            
+            // Get data from HTML attributes
+            const heading = activeSlide.getAttribute('data-heading');
+            const subheading = activeSlide.getAttribute('data-subheading');
+            const buttonText = activeSlide.getAttribute('data-button');
+            
+            // Reset animations
+            headingEl.classList.remove('animate-content');
+            subheadingEl.classList.remove('animate-content');
+            document.getElementById('cta-container').classList.remove('animate-content');
+
+            void headingEl.offsetWidth; // Trigger reflow
+
+            // Set content
+            headingEl.textContent = heading;
+            subheadingEl.textContent = subheading;
+            // ctaBtn.textContent = buttonText;
+
+            // Start animations
+            headingEl.classList.add('animate-content');
+            subheadingEl.classList.add('animate-content');
+            subheadingEl.style.animationDelay = "0.1s";
+            document.getElementById('cta-container').classList.add('animate-content');
+            document.getElementById('cta-container').style.animationDelay = "0.2s";
+
+            // Update Image Opacity and Zoom Class
+            slides.forEach((slide, i) => {
+                const isActive = i === currentSlide;
+                slide.style.opacity = isActive ? "1" : "0";
+                slide.classList.toggle('active', isActive);
+            });
+
+            // Update Dots
+            const allDots = dotsContainer.children;
+            for (let i = 0; i < allDots.length; i++) {
+                if (i === currentSlide) {
+                    allDots[i].classList.remove('bg-white/40', 'w-2');
+                    allDots[i].classList.add('bg-white', 'w-6');
+                } else {
+                    allDots[i].classList.remove('bg-white', 'w-6');
+                    allDots[i].classList.add('bg-white/40', 'w-2');
+                }
+            }
+
+            resetProgressBar();
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateContent();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            updateContent();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateContent();
+            startAutoSlide();
+        }
+
+        function startAutoSlide() {
+            stopAutoSlide();
+            slideInterval = setInterval(() => {
+                if (!isPaused) nextSlide();
+            }, intervalTime);
+        }
+
+        function stopAutoSlide() {
+            clearInterval(slideInterval);
+        }
+
+        function resetProgressBar() {
+            progressBar.style.transition = 'none';
+            progressBar.style.width = '0%';
+            setTimeout(() => {
+                if (!isPaused) {
+                    progressBar.style.transition = `width ${intervalTime}ms linear`;
+                    progressBar.style.width = '100%';
+                }
+            }, 50);
+        }
+
+        // Listeners
+        document.getElementById('next-btn').addEventListener('click', () => { nextSlide(); startAutoSlide(); });
+        document.getElementById('prev-btn').addEventListener('click', () => { prevSlide(); startAutoSlide(); });
+
+        container.addEventListener('mouseenter', () => {
+            isPaused = true;
+            progressBar.style.width = progressBar.offsetWidth + 'px';
+            progressBar.style.transition = 'none';
+        });
+
+        container.addEventListener('mouseleave', () => {
+            isPaused = false;
+            resetProgressBar();
+        });
+
+        window.onload = initSlider;
+    </script>

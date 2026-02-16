@@ -1,0 +1,97 @@
+
+
+<div class="globe-wrapper flex justify-start lg:justify-center items-center h-50 md:h-72.5">
+  <canvas id="globeCanvas" class="w-40 h-40 md:w-62.5 md:h-62.5"></canvas>
+</div>
+
+<script>
+  const canvas = document.getElementById("globeCanvas");
+  const ctx = canvas.getContext("2d");
+
+  const size = 340;
+  canvas.width = size;
+  canvas.height = size;
+
+  const center = size / 2;
+  const radius = 130;
+  const perspective = 400;
+
+  const longitudeLines = 18;
+  const latitudeLines = 12;
+
+  let rotation = 0;
+
+  function project(x, y, z) {
+    const scale = perspective / (perspective + z);
+    return {
+      x: center + x * scale,
+      y: center + y * scale
+    };
+  }
+
+  function rotateY(x, z, angle) {
+    return {
+      x: x * Math.cos(angle) - z * Math.sin(angle),
+      z: x * Math.sin(angle) + z * Math.cos(angle)
+    };
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, size, size);
+    ctx.strokeStyle = "#7EA2FF";
+    ctx.lineWidth = 1;
+
+    // -------- LONGITUDE LINES --------
+    for (let i = 0; i < longitudeLines; i++) {
+      const lon = (i / longitudeLines) * Math.PI * 2;
+
+      ctx.beginPath();
+
+      for (let lat = -Math.PI / 2; lat <= Math.PI / 2; lat += 0.02) {
+        let x = radius * Math.cos(lat) * Math.cos(lon);
+        let y = radius * Math.sin(lat);
+        let z = radius * Math.cos(lat) * Math.sin(lon);
+
+        const rotated = rotateY(x, z, rotation);
+        const point = project(rotated.x, y, rotated.z);
+
+        if (lat === -Math.PI / 2) {
+          ctx.moveTo(point.x, point.y);
+        } else {
+          ctx.lineTo(point.x, point.y);
+        }
+      }
+
+      ctx.stroke();
+    }
+
+    // -------- LATITUDE LINES --------
+    for (let j = 1; j < latitudeLines; j++) {
+      const lat = (j / latitudeLines - 0.5) * Math.PI;
+
+      ctx.beginPath();
+
+      for (let lon = 0; lon <= Math.PI * 2; lon += 0.02) {
+        let x = radius * Math.cos(lat) * Math.cos(lon);
+        let y = radius * Math.sin(lat);
+        let z = radius * Math.cos(lat) * Math.sin(lon);
+
+        const rotated = rotateY(x, z, rotation);
+        const point = project(rotated.x, y, rotated.z);
+
+        if (lon === 0) {
+          ctx.moveTo(point.x, point.y);
+        } else {
+          ctx.lineTo(point.x, point.y);
+        }
+      }
+
+      ctx.stroke();
+    }
+
+    rotation += 0.003; // smooth slow rotation
+    requestAnimationFrame(draw);
+  }
+
+  draw();
+</script>

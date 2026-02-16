@@ -1,0 +1,173 @@
+---
+import OceanFreight from '../assets/services/OceanFreight.webp';
+import AirFreight from '../assets/services/AirFreight.webp';
+import BulkBreak from '../assets/services/BulkBreak.webp';
+import Clearance from '../assets/services/Clearance.webp';
+import Warehouse from '../assets/services/Warehouse.webp';
+import Transport from '../assets/services/Transport.webp';
+---
+
+
+    <!-- Main Container -->
+    <div id="main-hero" class="relative py-10 sm:py-13 lg:py-14 flex items-center justify-center overflow-hidden">
+        
+        <!-- Background Image Layers -->
+        <div id="bg-layers" class="absolute inset-0 z-0">
+            <img src={OceanFreight.src} alt="Years of Experience" class="absolute inset-0 w-full h-full object-cover img-layer opacity-100" id="bg-default" loading="lazy">
+        </div>
+
+        <!-- Dark Overlay Layer -->
+        <div class="absolute inset-0 hero-overlay z-1"></div>
+        
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col relative z-10">
+            
+            <!-- Section Heading -->
+            <div class="flex items-center mb-10 lg:mb-12">
+                <h2 class="font-bold text-white uppercase border-l-2 border-white pl-4">Our Services</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-20 items-start">
+                
+                <!-- Left Side: Image, Content & Button -->
+                <div class="flex flex-col items-start order-2 md:order-1 reveal">
+                    <div class="relative overflow-hidden rounded-xl shadow-2xl aspect-16/10 lg:aspect-2/1 w-full bg-gray-800">
+                        <div id="fg-layers" class="absolute inset-0">
+                            <img src={OceanFreight.src} alt="Years of Experience" class="absolute inset-0 w-full h-full object-cover img-layer opacity-100" id="fg-default" loading="lazy">
+                        </div>
+                        <div class="absolute inset-0 bg-black/10 pointer-events-none"></div>
+                    </div>
+
+                    <!-- Dynamic Description Section -->
+                    <div class="mt-8 min-h-25 md:min-h-20">
+                        <p id="service-description" class="text-white text-sm leading-5.5 md:leading-6 content-fade">
+                            Reliable and cost-effective sea transportation solutions for global shipments, handling containerized and specialized cargo with maximum efficiency.
+                        </p>
+                    </div>
+
+                    <!-- Request A Quote Button -->
+                    <a href="#" class="mt-3 bg-white text-black text-sm md:text-base px-4 md:px-8 py-3 rounded-full font-medium hover:bg-gray-200 transition-colors duration-300 ease-in-out">
+                        Request A Quote
+                    </a>
+                </div>
+
+                <!-- Right Side: Navigation List -->
+                <div class="flex flex-col justify-start order-1 md:order-2 reveal">
+                    <nav id="service-list" class="flex flex-col">
+                        
+                        <!-- Service Item 1 -->
+                        <div class="service-item group py-4 md:py-5 cursor-pointer list-item-border transition-all duration-300">
+                            <img src={OceanFreight.src} class="src-img hidden" loading="lazy">
+                            <span class="desc-src hidden">Reliable and cost-effective sea transportation solutions for global shipments, handling containerized and specialized cargo with maximum efficiency.</span>
+                            <h2 class="text-2xl md:text-3xl 2xl:text-4xl font-semibold text-white/40 group-hover:text-white transition-all duration-300 group-hover:translate-x-4">Ocean Freight</h2>
+                        </div>
+
+                        <!-- Service Item 2 -->
+                        <div class="service-item group py-4 md:py-5 cursor-pointer list-item-border transition-all duration-300">
+                            <img src={AirFreight.src} class="src-img hidden" loading="lazy">
+                            <span class="desc-src hidden">Fast and secure air transport services for time-critical cargo, ensuring your goods reach global destinations with precision and speed.</span>
+                            <h2 class="text-2xl md:text-3xl 2xl:text-4xl font-semibold text-white/40 group-hover:text-white transition-all duration-300 group-hover:translate-x-4">Air Freight</h2>
+                        </div>
+
+                        <!-- Service Item 3 -->
+                        <div class="service-item group py-4 md:py-5 cursor-pointer list-item-border transition-all duration-300">
+                            <img src={BulkBreak.src} class="src-img hidden" loading="lazy">
+                            <span class="desc-src hidden">Expert handling of heavy-lift, oversized, and complex cargo. We manage the entire lifecycle of industrial projects and bulk movements.</span>
+                            <h2 class="text-2xl md:text-3xl 2xl:text-4xl font-semibold text-white/40 group-hover:text-white transition-all duration-300 group-hover:translate-x-4 ">BulkBreak Logistics</h2>
+                        </div>
+
+                        <!-- Service Item 4 -->
+                        <div class="service-item group py-4 md:py-5 cursor-pointer list-item-border transition-all duration-300">
+                            <img src={Clearance.src} class="src-img hidden" loading="lazy">
+                            <span class="desc-src hidden">Navigating complex international trade regulations with ease. Our customs experts ensure compliant and rapid clearance for all shipments.</span>
+                            <h2 class="text-2xl md:text-3xl 2xl:text-4xl font-semibold text-white/40 group-hover:text-white transition-all duration-300 group-hover:translate-x-4">Customs Clearance</h2>
+                        </div>
+
+                        <!-- Service Item 5 -->
+                        <div class="service-item group py-4 md:py-5 cursor-pointer list-item-border transition-all duration-300">
+                            <img src={Warehouse.src} class="src-img hidden" loading="lazy">
+                            <span class="desc-src hidden">Strategic storage solutions with real-time inventory tracking and optimized distribution networks to keep your supply chain moving.</span>
+                            <h2 class="text-2xl md:text-3xl 2xl:text-4xl font-semibold text-white/40 group-hover:text-white transition-all duration-300 group-hover:translate-x-4">Warehousing</h2>
+                        </div>
+
+                        <!-- Service Item 6 -->
+                        <div class="service-item group py-4 md:py-5 cursor-pointer transition-all duration-300">
+                            <img src={Transport.src} class="src-img hidden" loading="lazy">
+                            <span class="desc-src hidden">Dynamic road and rail transport solutions providing reliable last-mile delivery and regional hauling for any cargo size.</span>
+                            <h2 class="text-2xl md:text-3xl 2xl:text-4xl font-semibold text-white/40 group-hover:text-white transition-all duration-300 group-hover:translate-x-4">Transportation</h2>
+                        </div>
+
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* Smooth transitions for images and text */
+        .img-layer, .content-fade {
+            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .list-item-border { border-bottom: 1px solid rgba(255, 255, 255, 0.15); }
+        
+        /* Gradient Overlay to match image depth */
+        .hero-overlay {
+            background: linear-gradient(to right, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.88));
+        }
+    </style>
+
+    <script>
+        const items = document.querySelectorAll('.service-item');
+        const mainFg = document.getElementById('fg-default');
+        const mainBg = document.getElementById('bg-default');
+        const descText = document.getElementById('service-description');
+
+        const updateContent = (item) => {
+            const newSrc = item.querySelector('.src-img').src;
+            const newDesc = item.querySelector('.desc-src').textContent;
+
+            // Transition main foreground image
+            mainFg.style.opacity = '0';
+            mainFg.style.transform = 'scale(1.05)';
+            
+            // Transition main background image
+            mainBg.style.opacity = '0';
+
+            // Transition description text
+            descText.style.opacity = '0';
+            descText.style.transform = 'translateY(10px)';
+
+            setTimeout(() => {
+                // Use the same source for both bg and fg as requested
+                mainFg.src = newSrc;
+                mainFg.style.opacity = '1';
+                mainFg.style.transform = 'scale(1)';
+                
+                mainBg.src = newSrc;
+                mainBg.style.opacity = '1';
+
+                descText.textContent = newDesc;
+                descText.style.opacity = '1';
+                descText.style.transform = 'translateY(0)';
+            }, 300);
+
+            // UI Highlight effect
+            items.forEach(el => {
+                if (el !== item) {
+                    el.style.opacity = '0.3';
+                } else {
+                    el.style.opacity = '1';
+                }
+            });
+        };
+
+        const resetContent = () => {
+            items.forEach(el => el.style.opacity = '1');
+        };
+
+        items.forEach(item => {
+            item.addEventListener('mouseenter', () => updateContent(item));
+            item.addEventListener('mouseleave', resetContent);
+            item.addEventListener('touchstart', () => updateContent(item), { passive: true });
+        });
+    </script>
