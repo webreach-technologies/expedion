@@ -8,12 +8,12 @@ import Stats3 from "../assets/companystats/cstats-3.jpg";
 <section id="statsSection" class="pt-8 sm:pt-13 lg:pt-14 pb-10 sm:pb-13 lg:pb-14">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
 
-      <div class="grid grid-cols-1 md:grid-cols-3 lg:gap-2 mb-8 md:mb-10 reveal relative">
-        <Image src={Stats3} alt="Years of Experience" class="absolute inset-0 w-full h-full lg:hidden" />
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-2 mb-8 md:mb-10 reveal relative">
+        <!-- <Image src={Stats3} alt="Years of Experience" class="absolute inset-0 w-full h-full lg:hidden" /> -->
 
         <!-- Box 1 -->
         <div class="relative h-35 md:h-80 lg:h-120 overflow-hidden">
-          <Image src={Stats1} alt="Years of Experience" class="absolute inset-0 w-full h-full hidden lg:inline-block" />
+          <Image src={Stats1} alt="Years of Experience" quality={5} class="absolute inset-0 w-full h-full object-cover" />
 
           <div class="absolute inset-0 bg-black/50"></div>
 
@@ -27,7 +27,7 @@ import Stats3 from "../assets/companystats/cstats-3.jpg";
 
         <!-- Box 2 -->
         <div class="relative h-35 md:h-80 lg:h-120 overflow-hidden">
-          <Image src={Stats2} alt="Countries Covered" class="absolute inset-0 w-full h-full hidden lg:inline-block" />
+          <Image src={Stats2} alt="Countries Covered" quality={5} class="absolute inset-0 w-full h-full object-cover" />
 
           <div class="absolute inset-0 bg-black/50"></div>
 
@@ -41,7 +41,7 @@ import Stats3 from "../assets/companystats/cstats-3.jpg";
 
         <!-- Box 3 -->
         <div class="relative h-35 md:h-80 lg:h-120 overflow-hidden">
-          <Image src={Stats3} alt="Delivered Packages" class="absolute inset-0 w-full h-full hidden lg:inline-block" />
+          <Image src={Stats3} alt="Delivered Packages" quality={5} class="absolute inset-0 w-full h-full object-cover" />
 
           <div class="absolute inset-0 bg-black/50"></div>
 
